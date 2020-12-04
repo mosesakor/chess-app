@@ -2,11 +2,11 @@
 
 # This class is the Knight Piece
 class Knight
-  attr_reader :start, :possible_moves
+  attr_reader :position, :possible_moves
 
   def initialize(start)
     # start is starting position as array
-    @start = start
+    @position = start
     @possible_moves = moves(start)
   end
 
@@ -20,6 +20,12 @@ class Knight
 
   def invalid?(var1, var2)
     var1.negative? || var1 > 7 || var2.negative? || var2 > 7
+  end
+
+  def move(arr)
+    return 'Invalid Move' unless possible_moves.include?(arr)
+
+    @position = arr
   end
 end
 
