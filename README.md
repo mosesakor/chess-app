@@ -1,1 +1,3 @@
 # chess-app
+
+Test bot
