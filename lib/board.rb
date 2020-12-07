@@ -6,7 +6,7 @@ class Board
   def initialize
     @grid = Array.new(8) { Array.new(8, nil) }
   end
-  
+
   def set_pieces
     set_pawns
     set_white_pieces
@@ -20,13 +20,13 @@ class Board
 
   def set_white_pawns
     0.upto(7) do |i|
-      @grid[6][i] = Pawn.new([6, i], true)
+      @grid[6][i] = Pawn.new([6, i], 'white')
     end
   end
 
   def set_black_pawns
     0.upto(7) do |i|
-      @grid[1][i] = Pawn.new([1, x], false)
+      @grid[1][i] = Pawn.new([1, i], 'black')
     end
   end
 
@@ -52,7 +52,6 @@ class Board
     @grid[0][7] = Rook.new([0, 7], 'black')
   end
 
-
   def render
     system('clear')
     print ("   " + ('a'..'h').to_a.join(" ") + "\n")
@@ -76,7 +75,6 @@ class Board
     end
     print ("  " + ('a'..'h').to_a.join(" ") + "\n")
   end
-
 end
 
 a = Board.new.render
