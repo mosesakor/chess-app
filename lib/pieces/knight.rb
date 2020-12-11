@@ -4,9 +4,10 @@
 class Knight
   attr_reader :position, :possible_moves
 
-  def initialize(start)
+  def initialize(start, color)
     # start is starting position as array
     @position = start
+    @color = color
     @possible_moves = moves(start)
   end
 
